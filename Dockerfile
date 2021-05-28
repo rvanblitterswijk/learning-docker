@@ -1,3 +1,4 @@
-FROM nginx:1.15
+FROM node:11-alpine
 
-COPY index.html /usr/share/nginx/html
+COPY compute.js ./src/app/
+CMD ["node", "./src/app/compute.js"]
