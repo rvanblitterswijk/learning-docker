@@ -1,7 +1,7 @@
-FROM debian:8
+FROM node:11-alpine
 
-ENV host=www.google.com
+COPY compute.js ./src/app/
 
-COPY ping.sh .
+ENV diameter=10
 
-CMD ["sh", "ping.sh"]
+CMD ["node", "/src/app/compute.js"]
